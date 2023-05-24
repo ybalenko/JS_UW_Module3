@@ -20,18 +20,18 @@ My project will require an Express API using:
 
 - Authentication and Authorization:
 
-        Login and authentication will be implemented with JWT which will be generated using the [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) library. I will be using middleware to enforce authentication and authorization.
+    1. Login and authentication will be implemented with JWT which will be generated using the [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) library. I will be using middleware to enforce authentication and authorization.
 
-        For securely storing passwords I will be using [bcrypt](https://www.npmjs.com/package/bcrypt) library.
+    2. For securely storing passwords I will be using [bcrypt](https://www.npmjs.com/package/bcrypt) library.
 
 
 - CRUD routes, data models, DAOs:
 
-        Using [MongoDB](https://www.mongodb.com/try/download/community) for storing data and CRUD operations.
+    1. Using [MongoDB](https://www.mongodb.com/try/download/community) for storing data and CRUD operations.
 
-        Routes for a user to sign up, login, logout, and change password. This will use a `User` model and corresponding DAO methods.
+    2. Routes for a user to sign up, login, logout, and change password. This will use a `User` model and corresponding DAO methods.
 
-        Routes for `Ads` along with `Ads` model and corresponding DAO methods.
+    3. Routes for `Ads` along with `Ads` model and corresponding DAO methods.
 
     - Login
         - Signup: `POST /login/signup`
