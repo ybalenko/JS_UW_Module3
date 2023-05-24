@@ -17,15 +17,21 @@ I will be working on an API for a bulletin board. The board allows posting of pu
 ### Requirements
 
 My project will require an Express API using:
+
 - Authentication and Authorization:
-        * Login and authentication will be implemented with JWT which will be generated using the [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) library. I will be using middleware to enforce authentication and authorization.
-        * For securely storing passwords I will be using [bcrypt](https://www.npmjs.com/package/bcrypt) library.
+
+        Login and authentication will be implemented with JWT which will be generated using the [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) library. I will be using middleware to enforce authentication and authorization.
+
+        For securely storing passwords I will be using [bcrypt](https://www.npmjs.com/package/bcrypt) library.
 
 
 - CRUD routes, data models, DAOs:
-        * Using [MongoDB](https://www.mongodb.com/try/download/community) for storing data and CRUD operations.
-        * Routes for a user to sign up, login, logout, and change password. This will use a `User` model and corresponding DAO methods.
-        * Routes for `Ads` along with `Ads` model and corresponding DAO methods.
+
+        Using [MongoDB](https://www.mongodb.com/try/download/community) for storing data and CRUD operations.
+
+        Routes for a user to sign up, login, logout, and change password. This will use a `User` model and corresponding DAO methods.
+
+        Routes for `Ads` along with `Ads` model and corresponding DAO methods.
 
     - Login
         - Signup: `POST /login/signup`
@@ -47,7 +53,11 @@ My project will require an Express API using:
 
 ### Project Phases
 Week 6: Project proposal created.
-Week 7: Most of the unit tests for the routes are in place.  
-Week 8: Unit tests are passing. Prototype/proof of concept is in place. 
+
+Week 7: Most of the unit tests for the routes are in place. 
+
+Week 8: Unit tests are passing. Prototype/proof of concept is in place.
+
 Week 9: Postman collection created. Start working on a presentation.
+
 Week 10: Project submission, presentation.
