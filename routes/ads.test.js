@@ -123,7 +123,7 @@ describe('Ads routes tests', () => {
         describe('POST /ads', () => {
             it('should return 200 for registered user', async () => {
                 const newAds = { expirationDate: '2030-12-09T00:00:00.000Z', text: 'Test text for active ads', details: 'Test details for active ads' };
-                console.log('userToken', userToken)
+                //console.log('userToken', userToken)
                 const res = await request(server)
                     .post('/ads')
                     .set('Authorization', 'Bearer ' + userToken)
@@ -178,7 +178,7 @@ describe('Ads routes tests', () => {
         describe('POST /ads', () => {
             it('should return 200 for admin', async () => {
                 const newAds = { expirationDate: '2030-12-09T00:00:00.000Z', text: 'Test text for active ads', details: 'Test details for active ads' };
-                console.log('tokenAdmin', tokenAdmin)
+                //console.log('tokenAdmin', tokenAdmin)
                 const res = await request(server)
                     .post('/ads')
                     .set('Authorization', 'Bearer ' + tokenAdmin)

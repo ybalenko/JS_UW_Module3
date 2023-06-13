@@ -123,7 +123,7 @@ describe("/login", () => {
                     .post("/login/password")
                     .set('Authorization', 'Bearer ' + token0)
                     .send({ password: '123' });
-                console.log('login tests: user 0 token', token0) //
+                //console.log('login tests: user 0 token', token0)
 
                 expect(res.statusCode).toEqual(200);
                 let loginRes0 = await request(server).post("/login").send(user0);
@@ -141,7 +141,7 @@ describe("/login", () => {
                     .post("/login/password")
                     .set('Authorization', 'Bearer ' + token1)
                     .send({ password: '123' });
-                console.log('login tests: user 1 token', token1) //
+                //console.log('login tests: user 1 token', token1)
 
                 expect(res.statusCode).toEqual(200);
                 const loginRes0 = await request(server).post("/login").send(user0);
