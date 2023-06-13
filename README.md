@@ -12,8 +12,8 @@ For a registered user, there will be an option to have a subscription. Subscript
 - Anonymous User. A user should be able only to view active ads and get owner's contact details.
 
 **Subscription states** :
-- Active and can be for 3, 6 or 12 months duration. Each active subscription has its start date and duration in days.
-- Inactive
+- Active. Each active subscription has its start date and duration in days.
+- Inactive.
 
 **Ads statuses** :
 - Active
@@ -73,6 +73,8 @@ Most of the unit tests for the routes are in place. - *In progress*.
 
 Unit tests are passing. Prototype/proof of concept is in place. - *In progress*.
 
-Postman collection created. Start working on a presentation.
+Postman collection created. - *In progress*.
 
-Project submission, presentation.
+Start working on a presentation. - *Done*
+
+Project submission, presentation. 
