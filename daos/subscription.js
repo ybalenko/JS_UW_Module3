@@ -22,6 +22,12 @@ module.exports.getById = (subscriptionId) => {
     return Subscription.findOne({ _id: subscriptionId }).lean();
 };
 
+module.exports.getByUserId = (userId) => {
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+        return false;
+    }
+    return Subscription.findOne({ userId: userId }).lean();
+};
 
 module.exports.updateById = async (subscriptionId, newObj) => {
     if (!mongoose.Types.ObjectId.isValid(subscriptionId)) {

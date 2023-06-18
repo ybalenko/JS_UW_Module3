@@ -61,8 +61,15 @@ router.put("/:id", authenticateToken, async (req, res, next) => {
     try {
         const { expirationDate, text, details } = req.body;
         const adsId = req.params.id;
-        const updatedAds = await adsDAO.updateById(adsId, { expirationDate, text, details });
-        return res.json(updatedAds);
+        const userId = req.user._id;
+        const actualAds = await adsDAO.getById(adsId);
+        if (!req.user.roles.includes('admin') && userId !== actualAds.userId) {
+            return res.status(401).send("Unauthorized action");
+        } else {
+            const updatedAds = await adsDAO.updateById(adsId, { expirationDate, text, details });
+            return res.json(updatedAds);
+        }
+
     } catch (e) {
         console.log('Failed to update an item:', e)
         res.status(500).send(e.message);
@@ -73,8 +80,15 @@ router.put("/:id", authenticateToken, async (req, res, next) => {
 router.delete("/:id", authenticateToken, async (req, res, next) => {
     try {
         const adsId = req.params.id;
-        await adsDAO.deleteById(adsId);
-        return res.sendStatus(200);
+        const userId = req.user._id;
+        const actualAds = await adsDAO.getById(adsId);
+        if (!req.user.roles.includes('admin') && userId !== actualAds.userId) {
+            return res.status(401).send("Unauthorized action");
+        } else {
+            await adsDAO.deleteById(adsId);
+            return res.sendStatus(200);
+        }
+
     } catch (e) {
         console.log('Failed to delete an item:', e)
         res.status(500).send(e.message);

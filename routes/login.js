@@ -3,7 +3,6 @@ const router = Router();
 const userDAO = require('../daos/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const jwtBlacklist = require('jwt-blacklist'); // TODO
 const TOKEN_SECRET = "secretkeyappearshere"; //TODO extract to a separate ENV file
 
 
@@ -31,12 +30,6 @@ function authenticateToken(req, res, next) {
     if (token == null) {
         return res.sendStatus(401);
     }
-    /* try {
-        jwtBlacklist.verify(token);
-    } catch (e) {
-        console.log('Token is invalid', e)
-        res.status(401).send(e.message);
-    } */
     jwt.verify(token, TOKEN_SECRET, (err, user) => {
         if (err) return res.sendStatus(401);
         req.user = user;
@@ -133,8 +126,6 @@ router.post("/password", authenticateToken, async (req, res, next) => {
 router.post("/logout", authenticateToken, async (req, res, next) => {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
-    jwtBlacklist.blacklist(token);
-
 });
 
 
