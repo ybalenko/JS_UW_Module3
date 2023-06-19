@@ -1,15 +1,7 @@
 const server = require("./server");
 const mongoose = require('mongoose');
-
 const jwt = require('jsonwebtoken');
-const jwtBlacklist = require('jwt-blacklist')(jwt);
 
-jwtBlacklist.config({
-    maxBlacklistPerUnit: 100000,
-    error: 0.00001,
-    unitType: 'h',
-    expiresDuration: '12'
-});
 
 
 const port = process.env.PORT || 8000;

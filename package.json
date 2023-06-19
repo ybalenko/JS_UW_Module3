@@ -31,7 +31,6 @@
         "dateformat": "^5.0.3",
         "express": "^4.18.2",
         "jsonwebtoken": "^9.0.0",
-        "jwt-blacklist": "^0.1.2",
         "mongoose": "^7.0.4",
         "uuid": "^9.0.0"
     },

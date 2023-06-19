@@ -1,10 +1,9 @@
-const { Router } = require("express");
+const { Router } = require('express');
 const router = Router();
 const userDAO = require('../daos/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const TOKEN_SECRET = "secretkeyappearshere"; //TODO extract to a separate ENV file
-
+const secret = require('../secret');
 
 async function passwordToHash(password) {
     const saltRounds = 10;
@@ -15,7 +14,7 @@ async function passwordToHash(password) {
 function generateAccessToken(email, userId, roles) {
     let token = jwt.sign(
         { _id: userId, email: email, roles: roles },
-        TOKEN_SECRET,
+        secret.TOKEN_SECRET,
         { expiresIn: "1h" }
     );
 
@@ -30,7 +29,7 @@ function authenticateToken(req, res, next) {
     if (token == null) {
         return res.sendStatus(401);
     }
-    jwt.verify(token, TOKEN_SECRET, (err, user) => {
+    jwt.verify(token, secret.TOKEN_SECRET, (err, user) => {
         if (err) return res.sendStatus(401);
         req.user = user;
         next();

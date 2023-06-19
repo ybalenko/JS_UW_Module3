@@ -2,7 +2,8 @@ const { Router } = require("express");
 const router = Router();
 const adsDAO = require('../daos/ads');
 const jwt = require('jsonwebtoken');
-const TOKEN_SECRET = "secretkeyappearshere"; //TODO extract to a separate ENV file
+const secret = require('../secret');
+
 
 
 function authenticateToken(req, res, next) {
@@ -11,7 +12,7 @@ function authenticateToken(req, res, next) {
     if (token == null) {
         return res.sendStatus(401);
     }
-    jwt.verify(token, TOKEN_SECRET, (err, user) => {
+    jwt.verify(token, secret.TOKEN_SECRET, (err, user) => {
         if (err) return res.sendStatus(401);
         req.user = user;
         next();

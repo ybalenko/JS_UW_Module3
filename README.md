@@ -62,19 +62,19 @@ My project will require an Express API using:
         - Update: `PUT /subscription/:id`
         - Delete: `DELETE /subscription/:id`
 
-- Routes will be fully tested (project test coverage > 80%).
+- Routes are fully tested using [Jest](https://jestjs.io): project test coverage > 80%. 
 - Postman collection to interact with API.
 
 
 ### Project Phases
-Project proposal created. - *Completed*.
+Project proposal created. - **Done**.
 
-Most of the unit tests for the routes are in place. - *In progress*.
+Most of the unit tests for the routes are in place. - **Done**.
 
-Unit tests are passing. Prototype/proof of concept is in place. - *In progress*.
+Unit tests are passing. Prototype/proof of concept is in place. - **Done**.
 
-Postman collection created. - *In progress*.
+Postman collection created. - **Done**.
 
-Start working on a presentation. - *Done*
+Start working on a presentation. - **Done**
 
-Project submission, presentation. 
+Project submission, presentation. - **Done**
