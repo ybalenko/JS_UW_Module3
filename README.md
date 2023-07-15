@@ -65,16 +65,17 @@ My project will require an Express API using:
 - Routes are fully tested using [Jest](https://jestjs.io): project test coverage > 80%. 
 - Postman collection to interact with API.
 
+[<img src="postman.png" width="200" />](postman.png)
+
 
 ### Project Phases
-Project proposal created. - **Done**.
+ - Project proposal created. - **Done**.
+ - Most of the unit tests for the routes are in place. - **Done**.
+ - Unit tests are passing. Prototype/proof of concept is in place. - **Done**.
+ - Postman collection created. - **Done**.
+ - Project submission, presentation. - **Done**
 
-Most of the unit tests for the routes are in place. - **Done**.
+ ### What to improve
 
-Unit tests are passing. Prototype/proof of concept is in place. - **Done**.
-
-Postman collection created. - **Done**.
-
-Start working on a presentation. - **Done**
-
-Project submission, presentation. - **Done**
+* Implement revoke a token for logout. 
+* Github Actions: trying to figure out why Github CI npm tests are failing while locally they are running OK.
